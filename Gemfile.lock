@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,15 +49,6 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (8.0.0)
       execjs
-    aws-sdk (2.10.108)
-      aws-sdk-resources (= 2.10.108)
-    aws-sdk-core (2.10.108)
-      aws-sigv4 (~> 1.0)
-      jmespath (~> 1.0)
-    aws-sdk-resources (2.10.108)
-      aws-sdk-core (= 2.10.108)
-    aws-sigv4 (1.0.2)
-    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
@@ -97,7 +94,6 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    jmespath (1.3.1)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -221,7 +217,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  aws-sdk (~> 2.3)
+  bcrypt!
   bootstrap (~> 4.0.0)
   byebug
   capybara (~> 2.13)
