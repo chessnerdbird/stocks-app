@@ -1,12 +1,22 @@
 <%= form_tag root_path, :method => 'POST' do %>
-	<div class="form-group">
+	<div class="form-group container">
 		<%= text_field_tag 'id', nil, placeholder: 'Enter Company Ticker Symbol', size: 50, class: "form-control" %>
-		<%= submit_tag 'Submit', class: "btn btn-primary" %>
+		<%= submit_tag 'Lookup Stock Quote', class: "btn btn-primary" %>
 	</div>
 <% end %>
 
 <br>
 
-<% stock = StockQuote::Stock.quote("goog") %>
-
-<%= stock.inspect %>
+<% if @stock %>
+	<strong>Company Name: </strong><%= @stock.name %> - <%= @stock.symbol %><br>
+	<strong>Current Ask: </strong><%= @stock.l %><br>
+	<strong>Earnings Per Share: </strong><%= @stock.eps %><br>
+	<strong>Company Name: </strong><%= @stock.pe %><br>
+	<strong>Company Name: </strong><%= @stock.mc %><br>
+	<strong>Company Name: </strong><%= @stock.op %><br>
+	<strong>Company Name: </strong><%= @stock.lo %> - <%= @stock.hi %><br>
+	<strong>Company Name: </strong><%= @stock.hi52 %><br>
+	<strong>Company Name: </strong><%= @stock.lo52 %><br>
+<% elsif @nothing %>
+	<%= @nothing %>
+<% end %>

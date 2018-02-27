@@ -1,6 +1,13 @@
 class HomeController < ApplicationController
   def index
-  	@stock = StockQuote::Stock.quote("symbol")
+  	if params[:id] == ""
+  		@nothing = "Hey, you forgot to enter a stock symbol."
+  	elsif 
+
+  		if params[:id]
+  			@stock = StockQuote::Stock.quote(params[:id])
+  		end
+  	end
   end
 
   def about
