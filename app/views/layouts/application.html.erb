@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StocksApp</title>
+    <title>Stocks App</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+	
+	<%= render "home/navbar" %>
+  
+  <div class="container">
+  	<!-- embedded ruby, grabs html files and outputs it to browser -->
     <%= yield %>
+  </div>
   </body>
 </html>
