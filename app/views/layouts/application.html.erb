@@ -12,8 +12,10 @@
   <body>
 	
 	<%= render "home/navbar" %>
-  
+
   <div class="container">
+    
+    <%= render "home/flash" %>
   	<!-- embedded ruby, grabs html files and outputs it to browser -->
     <%= yield %>
   </div>
