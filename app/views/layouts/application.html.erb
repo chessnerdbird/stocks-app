@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StocksApp</title>
+    <title>Stocks App</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+	
+	<%= render "home/navbar" %>
+
+  	<!-- embedded ruby, grabs html files and outputs it to browser -->
     <%= yield %>
   </body>
 </html>
