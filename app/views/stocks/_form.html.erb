@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :ticker %>
-    <%= form.text_field :ticker, id: :stock_ticker %>
+  <br>
+  <br>
+
+  <div class="form-group">
+    <h3><%= form.label :ticker %></h3>
+    <%= form.text_field :ticker, id: :stock_ticker, class: "form-control" %>
   </div>
 
   <div class="field">

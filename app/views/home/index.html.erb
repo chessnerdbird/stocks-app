@@ -1,27 +1,48 @@
+<br><br>
 <%= form_tag root_path, :method => 'POST' do %>
-	<div class="form-group container">
+	<div class="form-group">
 		<%= text_field_tag 'id', nil, placeholder: 'Enter Company Ticker Symbol', size: 50, class: "form-control" %>
+		<br>
 		<%= submit_tag 'Lookup Stock Quote', class: "btn btn-primary" %>
 	</div>
 <% end %>
 
 <br>
 
-
-
 <% if @stock %>
 
-	<strong>Company Name: </strong><%= @stock.name %> - <%= @stock.symbol %><br>
-	<strong>Current Ask: </strong><%= @stock.l %><br>
-	<strong>Earnings Per Share: </strong><%= @stock.eps %><br>
-	<strong>Price/Earning Ratio: </strong><%= @stock.pe %><br>
-	<strong>Market Cap: </strong><%= @stock.mc %><br>
-	<strong>Stock Open: </strong><%= @stock.op %><br>
-	<strong>Day's Range: </strong><%= @stock.lo %> - <%= @stock.hi %><br>
-	<strong>Year High: </strong><%= @stock.hi52 %><br>
-	<strong>Year Low: </strong><%= @stock.lo52 %><br>
+	<div class="card">
+		<div class="card-header">
+			<strong><%= @stock.name %> - <%= @stock.symbol %></strong>
+		</div>
+		<div class="card-body">
+			<div>
+				<h1>$<%= @stock.l %></h1><br>
+						
+				<strong>Earnings Per Share: </strong>$<%= @stock.eps %><br>
+				<strong>Price/Earning Ratio: </strong>$<%= @stock.pe %><br>
+				<strong>Market Cap: </strong>$<%= @stock.mc %><br>
+				<strong>Stock Open: </strong>$<%= @stock.op %><br>
+				<strong>Day's Range: </strong>$<%= @stock.lo %> - $<%= @stock.hi %><br>
+				<strong>Year High: </strong>$<%= @stock.hi52 %><br>
+				<strong>Year Low: </strong>$<%= @stock.lo52 %><br>
+			</div>
+			<br>
+			<div>
+				<%= @stock.summary[0]["overview"] %>
+			</div>
+			<br>
+			<br>
+			<div class="card-footer text-center">
+				<%= link_to 'New Stock', new_stock_path, class: "btn btn-secondary" %>
+			</div>				
+		</div>
+	</div>
+	<br>
+	<br>
 
 <% elsif @nothing %>
 	<%= @nothing %>
-	
+
 <% end %>
+
