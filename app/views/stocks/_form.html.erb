@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :users %>
-    <%= form.text_field :users %>
+    <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
   </div>
 
   <div class="actions">
